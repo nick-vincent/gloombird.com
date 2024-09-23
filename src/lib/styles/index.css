@@ -1,14 +1,82 @@
-html {
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-size: clamp(16px, 4vw, 24px);
-	font-family: sans-serif;
-	color: white;
-	background-color: #202020;
-  letter-spacing: -0.01em;
+	border: none;
+	background: none;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	color: inherit;
+	-webkit-tap-highlight-color: transparent;
 }
 
-body {
-	margin: 0;
-	padding: 0;
+html {
+	font-size: clamp(16px, 4dvw, 24px);
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	color: white;
+	background-color: #202020;
+	letter-spacing: -0.01em;
+}
+
+img {
+	display: block;
+	position: absolute;
+	width: 100dvw;
+	height: 100dvh;
+	object-fit: cover;
+}
+
+h1 {
+	font-size: 1.5rem;
+	margin-bottom: 0.5rem;
+	letter-spacing: -0.025em;
+}
+
+ol {
+	display: flex;
+	gap: 0.75rem;
+}
+
+ul {
+	display: flex;
+	gap: 1rem;
+}
+
+ul {
+	margin-top: 1.25rem;
+}
+
+li {
+	display: block;
+}
+
+a {
+	color: white;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+svg {
+	width: 2rem;
+	height: 2rem;
+	display: block;
+	fill: currentColor;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }

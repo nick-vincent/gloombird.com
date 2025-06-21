@@ -1,4 +1,4 @@
-<a href="https://spotify.com" rel="external noreferrer" target="_blank">
+<a href="https://open.spotify.com/album/52B6DtHwX14M1iBLOz7uCN" rel="external noreferrer" target="_blank">
 	<svg
 		width="24"
 		height="24"

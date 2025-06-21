@@ -1,4 +1,4 @@
-<a href="https://tidal.com" rel="external noreferrer" target="_blank">
+<a href="https://tidal.com/browse/album/389803242" rel="external noreferrer" target="_blank">
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		fill-rule="evenodd"

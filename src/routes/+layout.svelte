@@ -9,6 +9,7 @@
 	import Tidal from '$lib/icons/tidal.svelte';
 	import Amazon from '$lib/icons/amazon.svelte';
 	import Pandora from '$lib/icons/pandora.svelte';
+	import SoundCloud from '$lib/icons/soundcloud.svelte';
 
 	const songs = ['circles', 'float', 'landfill', 'luminate', 'twilight'];
 
@@ -80,9 +81,10 @@
 			<li><Apple /></li>
 			<li><Spotify /></li>
 			<li><Tidal /></li>
-			<!-- <li><YouTube /></li> -->
+			<li><YouTube /></li>
 			<li><Pandora /></li>
 			<li><Amazon /></li>
+			<li><SoundCloud /></li>
 		</ul>
 
 		{#if song}

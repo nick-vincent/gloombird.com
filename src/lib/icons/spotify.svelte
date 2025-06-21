@@ -1,7 +1,5 @@
 <a href="https://open.spotify.com/album/52B6DtHwX14M1iBLOz7uCN" rel="external noreferrer" target="_blank">
 	<svg
-		width="24"
-		height="24"
 		xmlns="http://www.w3.org/2000/svg"
 		fill-rule="evenodd"
 		clip-rule="evenodd"

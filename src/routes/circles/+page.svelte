@@ -10,6 +10,7 @@
 		property="og:image"
 		content="https://gloombird.com/_app/immutable/assets/circles.WsH8Gg4I.png"
 	/>
+	<link rel="icon" href="https://gloombird.com/_app/immutable/assets/circles.WsH8Gg4I.png" />
 </svelte:head>
 
 <style>

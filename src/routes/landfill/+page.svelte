@@ -10,6 +10,7 @@
 		property="og:image"
 		content="https://gloombird.com/_app/immutable/assets/landfill.DFdKDmC2.png"
 	/>
+	<link rel="icon" href="https://gloombird.com/_app/immutable/assets/landfill.DFdKDmC2.png" />
 </svelte:head>
 
 <style>

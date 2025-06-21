@@ -10,6 +10,7 @@
 		property="og:image"
 		content="https://gloombird.com/_app/immutable/assets/twilight.XMN-bVot.png"
 	/>
+	<link rel="icon" href="https://gloombird.com/_app/immutable/assets/twilight.XMN-bVot.png" />
 </svelte:head>
 
 <style>

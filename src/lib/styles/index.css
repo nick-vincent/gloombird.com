@@ -15,7 +15,7 @@
 
 html {
 	font-size: clamp(16px, 4dvw, 24px);
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 1.5;
 	color: white;
 	background-color: #202020;
@@ -72,11 +72,11 @@ svg {
 }
 
 .visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
 }

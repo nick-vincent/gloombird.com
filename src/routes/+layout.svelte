@@ -8,7 +8,7 @@
 	import YouTube from '$lib/icons/youtube.svelte';
 	import Tidal from '$lib/icons/tidal.svelte';
 	import Amazon from '$lib/icons/amazon.svelte';
-	import { onMount } from 'svelte';
+	import Pandora from '$lib/icons/pandora.svelte';
 
 	const songs = ['circles', 'float', 'landfill', 'luminate', 'twilight'];
 
@@ -19,6 +19,7 @@
 	let currentTime: number;
 	let playing = false;
 
+	$: buttonText = playing ? 'Pause' : 'Play';
 	$: song = data.pathname.replace(/\//g, '');
 	$: progress = currentTime / duration || 0;
 
@@ -42,14 +43,32 @@
 		return str.charAt(0).toUpperCase() + str.slice(1);
 	};
 
+	const toggleAudio = () => {
+		if (playing) {
+			pause();
+		} else {
+			play();
+		}
+	};
+
 	const play = () => {
 		audio.play();
 		playing = true;
+	};
+
+	const pause = () => {
+		audio.pause();
+		playing = false;
 	};
 </script>
 
 <main>
 	<nav>
+		<button class="toggle-audio" on:click={toggleAudio}>
+			<span class={playing ? 'pause' : 'play'}></span>
+			<span class="visually-hidden">{buttonText}</span>
+		</button>
+
 		<h1>Gloombird</h1>
 		<ol>
 			{#each songs as song}
@@ -61,32 +80,24 @@
 			<li><Apple /></li>
 			<li><Spotify /></li>
 			<li><Tidal /></li>
-			<li><YouTube /></li>
+			<!-- <li><YouTube /></li> -->
+			<li><Pandora /></li>
 			<li><Amazon /></li>
 		</ul>
 
-		<audio
-			src={`/${song}.mp3`}
-			autoplay
-			bind:this={audio}
-			bind:duration
-			bind:currentTime
-			on:ended={goToNextSong}
-		/>
+		{#if song}
+			<audio
+				src={`/${song}.mp3`}
+				autoplay
+				bind:this={audio}
+				bind:duration
+				bind:currentTime
+				on:ended={goToNextSong}
+			/>
+		{/if}
 
 		<progress value={progress} />
 	</nav>
-
-	{#if !playing}
-		<button class="play" on:click={play} out:fade={outTransition}>
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
-				><path
-					d="M50,2.3C23.7,2.3,2.3,23.7,2.3,50S23.7,97.7,50,97.7S97.7,76.3,97.7,50S76.3,2.3,50,2.3z M50,89.2   c-21.6,0-39.2-17.6-39.2-39.2S28.4,10.8,50,10.8S89.2,28.4,89.2,50S71.6,89.2,50,89.2z M41.3,31.1c-1.1-0.6-2.5,0.2-2.5,1.4   l-0.1,34.9c0,1.3,1.4,2.1,2.5,1.5l30.3-17.4c1.1-0.6,1.1-2.2,0-2.9L41.3,31.1z"
-				/>
-			</svg>
-			<span class="visually-hidden">Play</span>
-		</button>
-	{/if}
 
 	<div class="images">
 		{#key song}
@@ -126,21 +137,36 @@
 		height: 100dvh;
 	}
 
-	.play {
-		position: absolute;
+	.toggle-audio {
 		display: flex;
-		z-index: 0;
-		inset: 0;
+		position: relative;
 		cursor: pointer;
-		background: rgba(0, 0, 0, 0.5);
+		border-radius: 100%;
+		width: 3rem;
+		height: 3rem;
+		border: 0.25rem solid white;
+		margin-bottom: 0.5rem;
 	}
 
-	.play svg {
-		display: block;
-		width: 10rem;
-		height: 10rem;
-		margin: auto;
-		fill: rgba(255, 255, 255, 0.5);
+	.play {
+		position: absolute;
+		border: 0.5rem solid transparent;
+		border-left: 0.75rem solid white;
+		left: 50%;
+		top: 50%;
+		margin-left: 0.35rem;
+		translate: -50% -50%;
+	}
+
+	.pause {
+		position: absolute;
+		border-right: 0.25rem solid white;
+		border-left: 0.25rem solid white;
+		height: 1rem;
+		width: 0.75rem;
+		left: 50%;
+		top: 50%;
+		translate: -50% -50%;
 	}
 
 	progress {
